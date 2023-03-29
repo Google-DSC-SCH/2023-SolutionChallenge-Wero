@@ -1,0 +1,6 @@
+var dailyTestReview = {
+  20: 'If you score less than 20, you are a person with a poor lifestyle and in need of improvement. If you continue to maintain your current condition, there is a possibility that someday health problems may occur. If you find and improve your weaknesses, you can have a healthier body and mind. Why don\'t we find healthy habits together for a healthy future?',
+  30: 'If you score between 20 and 30, you are a person with a lifestyle that is close to average but lacking. Recognizing that diet, exercise, and stress control are important for your overall healthy life, you will be able to become healthier if you keep working hard. Start with small goals and work towards reaching them step by step.',
+  40: 'If you score 30 or more, you are living a healthier lifestyle than average. The efforts so far are great, but we think it would be great if you put in a little more effort for a healthier life. Let\'s keep our habits so far and develop further for a healthy future.',
+  50: 'Congratulations on scoring above 40 points! You\'re doing an amazing job maintaining a healthy lifestyle. Your hard work and consistency have paid off. Keep striving for a better you based on this score. Your continued effort and dedication will further improve your health. Keep up the healthy habits and live a better life.'
+};
