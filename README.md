@@ -147,7 +147,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ### PATI
 
-<사진 영역>
+![mbti_test](https://user-images.githubusercontent.com/56466165/228891536-82f3df9f-4b59-407a-999b-52c9b7ad66cd.gif)
 
 > We transformed the existing MBTI into PATI, which is WERO's MBTI. You can check the PATI type corresponding to your physical and mental health through 40 questions related to physical and mental health. Physical health and mental health are the criteria for PATI, and physical health can be checked through eating habits and activities, and mental health can be checked through self-esteem and interpersonal relationships.
 
@@ -159,7 +159,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ### Daily-Test-&-Graph
 
-<사진 영역>
+![daily_test](https://user-images.githubusercontent.com/56466165/228891648-c3c13368-b43c-46f6-9fea-3628e3ea1e89.gif)
 
 > You can check 10 questions about physical and mental health every day and how you feel on the day through emoticons. Check your mental and physical health through your test results and provide support messages based on accumulated scores and mood emoticons over the past 7 days! And also You can check the score from the Daily Test on the graph for 7 days!
 
@@ -167,7 +167,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ### Diary
 
-<사진 영역>
+![diary](https://user-images.githubusercontent.com/56466165/228891699-452eb05c-49f7-45c1-87d5-55516950cd5a.gif)
 
 > You can write a diary at the end of the day! Through the date lookup function of the calendar, you can check how I was in the past. For your information, modifications are not possible to fully remember how you felt that day!
 
@@ -175,7 +175,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ### Notice-Board
 
-<사진 영역>
+![notice_board](https://user-images.githubusercontent.com/56466165/228891750-4c30605d-076f-4930-9731-54a09c8c914a.gif)
 
 > You can post your concerns about your body and health according to the bulletin board function and communicate through comments. What should be noted here is that the author's PATI was exposed to posts and comments so that a consensus could be formed. Our bulletin board also provides news about mental and physical health. Useful news about physical and mental health will help you maintain a healthier lifestyle!
 
@@ -185,7 +185,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ### Recommendation
 
-<사진 영역>
+![recommend](https://user-images.githubusercontent.com/56466165/228891827-5de7890b-f104-4309-92b4-c8b4c7110e23.gif)
 
 > It's a song recommendation function. We're not just recommending it, but we're recommending those songs after checking out what songs you've heard a lot of with the same PATI as you! In addition, I recommend songs based on Daily Test's mood emoticons!
 
@@ -193,7 +193,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ### Group-Therapy
 
-<사진 영역>
+![group_theraphy](https://user-images.githubusercontent.com/56466165/228891862-97ceaa2c-a144-489f-9189-754c0615b826.gif)
 
 > Group therapy is consulted by real psychologists and coaches. We guarantee complete secrecy, so feel free to share your concerns! You can also group therapy by tying the same PATI type! You'll be able to relate to each other more because they're the same PATI! Finally, you can test it through a professional psychological test paper, and you can also consult based on the test results!
 
