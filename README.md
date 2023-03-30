@@ -67,7 +67,7 @@ The Sustainable Development Goals (SGDs) or Global Goals are a collection of 17 
 As can be seen in the figure above, there are 17 goals.
 
 ### Our goal
-We decided to create a Flutter application with the goal of ensuring health and promoting well-being for all age groups, among the United Nations' 17 sustainable development goals (SDGs). After the COVID-19 pandemic, we came across an article stating that there is a significant increase in people's interest in health. After reading this article, we began developing an application with the main idea of diagnosing the health status of people all over the world and managing their health through the application, especially for those who are too busy to take care of their health.
+Our team came across an article stating that people have become much more concerned about their health following the COVID-19 pandemic. After reading this, we decided to create a Flutter application called 'Wero' with the goal of ensuring health and promoting well-being for all age groups, in line with the UN's 17 Sustainable Development Goals (SDGs). Our aim is to help those who are struggling mentally or too busy to take care of their health.
   
 #### Good Health and Well-Being
 
