@@ -149,8 +149,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 ![mbti_test](https://user-images.githubusercontent.com/56466165/228891536-82f3df9f-4b59-407a-999b-52c9b7ad66cd.gif)
 
-> We transformed the existing MBTI into PATI, which is WERO's MBTI. You can check the PATI type corresponding to your physical and mental health through 40 questions related to physical and mental health. Physical health and mental health are the criteria for PATI, and physical health can be checked through eating habits and activities, and mental health can be checked through self-esteem and interpersonal relationships.
-
+> We developed a PATI that can define types like MBTI. You can check the PATI type corresponding to your physical and mental health through 40 questions related to physical and mental health. Physical health and mental health are the criteria for PATI, and physical health can be checked through eating habits and activities, and mental health can be checked through self-esteem and interpersonal relationships.
 - Define PATI type through animals
   - **Eating habits (E, H) (elephant, hamster), activity (B, S) (Beagle, Sloth))**
   - **Self-esteem (L, M) (Lion, Meerkat), interpersonal relationships (C, F) (Cafibara, Fox)**
@@ -179,7 +178,7 @@ Wero is an application that can manage physical health as well as mental health,
 
 > You can post your concerns about your body and health according to the bulletin board function and communicate through comments. What should be noted here is that the author's PATI was exposed to posts and comments so that a consensus could be formed. Our bulletin board also provides news about mental and physical health. Useful news about physical and mental health will help you maintain a healthier lifestyle!
 
-- **Check the issues that are considered a lot by PATI (further development)**
+- **The Function to extract common concerns by collecting the most posted words by PATI type (further development)**
 
 <br>
 
@@ -196,6 +195,7 @@ Wero is an application that can manage physical health as well as mental health,
 ![group_theraphy](https://user-images.githubusercontent.com/56466165/228891862-97ceaa2c-a144-489f-9189-754c0615b826.gif)
 
 > Group therapy is consulted by real psychologists and coaches. We guarantee complete secrecy, so feel free to share your concerns! You can also group therapy by tying the same PATI type! You'll be able to relate to each other more because they're the same PATI! Finally, you can test it through a professional psychological test paper, and you can also consult based on the test results!
+- **Group Therapy will be developed later.**
 
 <br>
 <hr>
