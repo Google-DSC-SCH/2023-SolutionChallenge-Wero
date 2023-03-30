@@ -226,7 +226,11 @@ Health applications can assist users in maintaining healthy social relationships
 
 ### App
 
-<정범님 설명>
+Terminal: Run the flutter pub get command
+Or Android Studio/IntelliJ: Open the pubspec.yaml file, and click the Packages get button at the top.
+VS Code: Open the pubspec.yaml file, and Get at the top right.
+Then run the code.
+LoginCheck() method of login_page is commented out because login error still occurs at the front.
 
 ### Backend
 
