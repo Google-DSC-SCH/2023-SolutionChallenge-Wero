@@ -60,7 +60,7 @@ class _GroupTheraphyState extends State<GroupTheraphy> {
                           child: Flexible(
                             child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [Text('Psychological \n Text',
+                              children: [Text('Psychological \n Test',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 19.0,

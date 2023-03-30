@@ -3,12 +3,16 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wero/model/user.dart';
 import 'package:wero/pages/main_page.dart';
 import 'package:get/get.dart';
 import 'package:wero/pages/personal_information_input_page.dart';
 import 'package:http/http.dart' as http;
 import 'package:wero/api/api.dart';
+import 'package:wero/model/access_regen.dart';
+
+//AccessReGen accessToken = AccessReGen(message: 'success', accessToken: accessToken);
 
 class LoginPage extends StatefulWidget {
   @override
@@ -36,18 +40,25 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  // loginCheck() async{ // 로그인 메서드 통신후 결과를 받아야 할 것이므로 async이다.
-  //   try {
-  //     var response = await http.get(Uri.parse(API.socialLoginUrl));//http.post메서드를 이용해 데이터 보내서 저장해야함 uri.parse를 사용해서 API클래스의 Uri를 전달할 것이다.
-  //     if(response.statusCode == 200) {//로그인이 정상적으로 되면 페이지 이동이 발생하도록 함
-  //       print('User has been logined ');
-  //       Get.offAll(PersonalInfoInitPage());
-  //     }
-  //   }
-  //   catch(e) {
-  //
-  //   }
-  // }
+  loginCheck() async{ // 로그인 메서드 통신후 결과를 받아야 할 것이므로 a
+    try {
+      final url = Uri.parse(API.socialLoginUrl);
+      launchUrl(url, mode: LaunchMode.externalApplication);
+
+      var response = await http.get(Uri.parse(API.socialLoginUrl));
+      var responseBody = jsonDecode(response.body);
+      print(responseBody['accessToken']);
+      
+      if(response.statusCode == 200) {//로그인이 정상적으로 되면 페이지 이동이 발생하도록 함
+        print('User has been logined ');
+        AccessReGen accessToken = AccessReGen(message: 'success', accessToken: responseBody['accessToken']);
+        Get.offAll(PersonalInfoInitPage());
+      }
+    }
+    catch(e) {
+
+    }
+  }
 
   @override
   Widget build(BuildContext context ) {

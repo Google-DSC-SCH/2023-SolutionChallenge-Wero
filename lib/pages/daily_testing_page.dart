@@ -106,7 +106,11 @@ class DailySurveyScreenState extends State<DailySurveyScreen> {
                                   }
                                   _ratings[index] = ratingIndex + 1;//탭할때마다 발생하는 상황에서 결과 값인 토탈에 리스트 인덱스 값을 더하면 당연히 오류가 발생할 것
                                   //widget.questions[index]['answers'].length()는 문제 개수 문제 전체 총계에 올바른 도메인에 이전 총계에 5/문제 개수로 가중치 설정하기
-                                  total[widget.questions[index]['domain']-1]= total[widget.questions[index]['domain']-1]+(5/widget.questions[index]['answers'].length+0.9).toInt()*ratingIndex+1;
+
+                                  widget.questions[index]['answers'].length!=2 ?
+                                      total[widget.questions[index]['domain']-1]= total[widget.questions[index]['domain']-1]+(5/widget.questions[index]['answers'].length+0.9).toInt()*ratingIndex+1
+                                      :
+                                      total[widget.questions[index]['domain']-1]= total[widget.questions[index]['domain']-1]+(5/widget.questions[index]['answers'].length+1).toInt()*ratingIndex+2;
                                   //_ratings[index] 를 이번에 눌린 값으로 초기화 하기 전에 저장되어있는 값을 먼저 전체 값에서 뺴주자
                                   // total[widget.questions[index+ widget.lastQuestion]['domain']-1]= total[widget.questions[index+ widget.lastQuestion]['domain']-1]- _ratings[index];
                                   // _ratings[index] = ratingIndex + 1;//탭할때마다 발생하는 상황에서 결과 값인 토탈에 리스트 인덱스 값을 더하면 당연히 오류가 발생할 것
@@ -116,27 +120,35 @@ class DailySurveyScreenState extends State<DailySurveyScreen> {
                                     //질문의 영역을찾아서 그에 맞는 인덱스에 결과 값을1,2,3,4  빼기1을해야 실제로 인덱스 값에 계를 더할 수 있음
                                   });
                                 },
-                                child: Container(
-                                  height: 40.0,
-                                  width: 40.0,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    color: _ratings[index] == ratingIndex + 1
-                                        ? Colors.black
-                                        : Colors.grey[200],
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      '${ratingIndex + 1}',
-                                      style: TextStyle(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 40.0,
+                                      width: 40.0,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20.0),
                                         color: _ratings[index] == ratingIndex + 1
-                                            ? Colors.white
-                                            : Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18.0,
+                                            ? Colors.black
+                                            : Colors.grey[200],
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          '${(widget.questions[index]['answers'].length!=2) ?
+                                          (5/widget.questions[index]['answers'].length+0.9).toInt()*ratingIndex+1
+                                              :
+                                          (5/widget.questions[index]['answers'].length+1).toInt()*ratingIndex+2}',//출력되는 버튼
+                                          style: TextStyle(
+                                            color: _ratings[index] == ratingIndex + 1
+                                                ? Colors.white
+                                                : Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18.0,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                    Text('${widget.questions[index]['item'][ratingIndex]}'),
+                                  ],
                                 ),
                               );
                             }),

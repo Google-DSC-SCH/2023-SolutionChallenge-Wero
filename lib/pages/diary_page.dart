@@ -248,6 +248,6 @@ var Daiary = {
   27: 'I went to a baseball game today and even though my team lost, it was still a fun experience.',
   28: 'I received a compliment from a stranger today, it made me feel appreciated and valued.',
   29: '',//'I had a difficult workout today, but I feel proud of myself for pushing through the discomfort.',
-  30: 'I spent the day doing a digital detox, it was refreshing to disconnect from technology and focus on the present moment.',
+  30: ' ',//'I spent the day doing a digital detox, it was refreshing to disconnect from technology and focus on the present moment.',
   31: 'I had a difficult conversation with a friend today, but we were able to resolve our issues and strengthen our friendship.'
 };

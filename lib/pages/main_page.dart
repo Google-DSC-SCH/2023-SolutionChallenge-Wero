@@ -31,7 +31,7 @@ class _MainPageState extends State<MainPage> {
       icon: Icon(Icons.home),
     ),
     BottomNavigationBarItem(//게시판
-      label: 'Bulletin Board',
+      label: 'Community',
       icon: Icon(Icons.calendar_today_outlined),
     ),
     BottomNavigationBarItem(//일기 아이콘

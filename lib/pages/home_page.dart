@@ -10,11 +10,11 @@ import 'package:wero/pages/group_thraphy.dart';
 List<Map> dailyTestList = [
   //전역 변수로 날짜별 점수로 초기화 시켜둠
   {'dailyScore': 10, 'dailyDate': '03-14', 'dailyEmotion': "happy"},
-  {'dailyScore': 5, 'dailyDate': '03-15', 'dailyEmotion': "depressed"},
-  {'dailyScore': 3, 'dailyDate': '03-16', 'dailyEmotion': "excited"},
+  {'dailyScore': 4, 'dailyDate': '03-15', 'dailyEmotion': "depressed"},
+  {'dailyScore': 8, 'dailyDate': '03-16', 'dailyEmotion': "excited"},
   {'dailyScore': 6, 'dailyDate': '03-17', 'dailyEmotion': "happy"},
-  {'dailyScore': 7, 'dailyDate': '03-18', 'dailyEmotion': "angry"},
-  {'dailyScore': 8, 'dailyDate': '03-19', 'dailyEmotion': "not_bad"},
+  {'dailyScore': 3, 'dailyDate': '03-18', 'dailyEmotion': "angry"},
+  {'dailyScore': 7, 'dailyDate': '03-19', 'dailyEmotion': "not_bad"},
   {'dailyScore': 9, 'dailyDate': '03-20', 'dailyEmotion': "happy"},
 ];
 
@@ -32,6 +32,8 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
+
 class HP extends StatefulWidget {
   @override
   _HPState createState() => _HPState();
@@ -39,8 +41,6 @@ class HP extends StatefulWidget {
 
 class _HPState extends State<HP> {
   //Homepage State에서 리스트로 초기화 시켜놓을것
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -147,7 +147,7 @@ class _HPState extends State<HP> {
                 child: Column(children: [
                   Center(
                     child: Container(
-                        child: Center(child: Text('Most popular icons this week', style: TextStyle(fontSize: 16),)),
+                        child: Center(child: Text('Most popular icons of last 7days', style: TextStyle(fontSize: 16),)),
                       width: double.infinity,
                       height: 30,
                     ),
@@ -177,7 +177,7 @@ class _HPState extends State<HP> {
                 ),
                 child: Column(
                   children: [
-                    Text('Analysis of your week', style: TextStyle(fontSize: 20.0)),
+                    Text('Analysis of your last 7days', style: TextStyle(fontSize: 20.0)),
                     SizedBox(height: 5,),
                     Divider(thickness: 1, height: 1, color: Colors.grey[400]),
                     SizedBox(height: 10,),

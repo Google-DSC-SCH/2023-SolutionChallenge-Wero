@@ -74,9 +74,11 @@ class _CommunityPageState extends State<CommunityPage> {
   final NewsApiKey = Uri.parse(
     'https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=ac16a4074b8544e2b47e66017cf77dab',
   );
+
+  //Future.delayed(Duration(seconds:2)
   //뉴스 앱 구현 하기
   Future<List<News>> _getNews() async{
-    var data = await http.get(NewsApiKey);
+    var data = await Future.delayed(Duration(seconds:2),(){ http.get(NewsApiKey);});
     var jsonData = json.decode(data.body);
     print('Response status: ${data.statusCode}');
 
@@ -84,11 +86,10 @@ class _CommunityPageState extends State<CommunityPage> {
 
     List<News> newses = [];
 
-    for(int i=0; i<5; i++) {
+    for(int i=0; i<3; i++) {
       News newNews = News(publishedAt: jsonData['articles'][i]["publishedAt"], urlToImage: jsonData['articles'][i]["urlToImage"],
           title: jsonData['articles'][i]["title"], url: jsonData['articles'][i]["url"], description: jsonData['articles'][i]["description"]);
       print('${jsonData['articles'][i]['title']},${jsonData['articles'][i]['description']}');
-
       newses.add(newNews);
       print(newses[i].title);
     }
@@ -119,7 +120,6 @@ class _CommunityPageState extends State<CommunityPage> {
                     ),
                   ),
                   title: Text(snapshot.data[index].title),
-
                   subtitle: Column(
                     children:[
                       Text(snapshot.data[index].publishedAt),

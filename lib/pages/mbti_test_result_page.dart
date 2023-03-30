@@ -1,21 +1,26 @@
+import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:wero/model/mbti_score.dart';
 import 'package:wero/objects/mbti_result.dart';
 import 'package:wero/pages/main_page.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 import 'dart:typed_data';
 import 'package:wero/objects/mbti_key_value.dart';
+import 'package:wero/api/api.dart';
+import 'package:http/http.dart' as http;
+import 'login_page.dart';
 
 class MbtiResult extends StatelessWidget {
   var mbtiResult;
 
   MbtiResult(this.mbtiResult);
 
-  var input1 =3;
+
   //Random().nextInt(16);
 
   @override
@@ -94,38 +99,56 @@ class MbtiResult extends StatelessWidget {
     );
 
 
+
+  }
+  var input1 =3;
+
+
+  saveTestResult() async { //mbti 테스트 결과 저장
+    MBTIScore score = MBTIScore(mbti: '${KeyMBTIMap[input1]}', mScore: mbtiResult[0], bScore: mbtiResult[1], tScore: mbtiResult[2], iScore: mbtiResult[3]);
+    try {
+      var res = await http.post(
+        Uri.parse(API.enterMbtiUrl),
+        //headers: accessToken.toJson(),
+        body: score.toJson(),
+      );
+      if(res.statusCode ==200) {
+        var success = jsonDecode(res.body);
+        if(success['success']== true) {
+          print('success');
+        }
+      }
+    } catch (e) {
+      print('error happend');
+    }
   }
 
+  // 테스트 결과값 리턴하는 함수
+  // machine learning model using
+  classify(List<int> testResult) async {
+    var interpreter = await Interpreter.fromAsset('assets/ML_model/MBTI_predcition.tflite');
+
+    var inputType = interpreter.getInputTensor(0).type;
+    var outputType = interpreter.getOutputTensor(0).type;
+    var inputShape = interpreter.getInputTensor(0).shape;
+    var outputShape = interpreter.getOutputTensor(0).shape;
+
+    var input = List.filled(1, List.filled(4, 0), growable: false);
+
+    input[0] = testResult;
 
 
-  //테스트 결과값 리턴하는 함수
-  //machine learning model using
-  // classify(List<int> testResult) async {
-  //   var interpreter = await Interpreter.fromAsset('assets/ML_model/MBTI_predcition.tflite');
-  //
-  //   var inputType = interpreter.getInputTensor(0).type;
-  //   var outputType = interpreter.getOutputTensor(0).type;
-  //   var inputShape = interpreter.getInputTensor(0).shape;
-  //   var outputShape = interpreter.getOutputTensor(0).shape;
-  //
-  //
-  //
-  //   var input = List.filled(1, List.filled(4, 0), growable: false);
-  //
-  //   input[0] = testResult;
-  //
-  //
-  //   // var inputTensor = Tensor.fromList(inputType, inputShape, input);
-  //   // interpreter.run(inputTensor.buffer, [output.buffer]);
-  //   //
-  //   // var outputs = List.filled(interpreter.getOutputTensor(0).shape.reduce((a, b) => a * b), 0).reshape(interpreter.getOutputTensor(0).shape);
-  //   // interpreter.run(inputs, outputs);
-  //   //
-  //   // var output = interpreter.getOutputTensor(0);
-  //   // var outputList = output.toList().cast<double>();
-  //   //
-  //   // print(outputData);
-  // }
+    // var inputTensor = Tensor.fromList(inputType, inputShape, input);
+    // interpreter.run(inputTensor.buffer, [output.buffer]);
+    //
+    // var outputs = List.filled(interpreter.getOutputTensor(0).shape.reduce((a, b) => a * b), 0).reshape(interpreter.getOutputTensor(0).shape);
+    // interpreter.run(inputs, outputs);
+    //
+    // var output = interpreter.getOutputTensor(0);
+    // var outputList = output.toList().cast<double>();
+    //
+    // print(outputData);
+  }
 
 }
 
