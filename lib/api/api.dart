@@ -1,4 +1,8 @@
 //사용할 api 전부선언
+Map<String, String> requestHeaders = {
+  'accessToken': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlciI6Imdvb2dsZSIsImVtYWlsIjoiZGlub2hqYjIzMzFAZ21haWwuY29tIiwiaWF0IjoxNjgwNTQxMjgwLCJleHAiOjE2ODA2Mjc2ODB9.rSXTeZY0gH91mFBoa0gXe8Irwv_nzwYNj04m5oE-b20',
+  'refreshToken': '746ecb9f-91f1-44ac-bed2-6ccb7c19b3b0'
+};
 
 class API {
   static const hostConnectUrl = 'http://34.170.144.171:9999/';

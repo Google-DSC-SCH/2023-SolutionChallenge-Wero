@@ -24,13 +24,14 @@ class _PersonalInfoInitPageState extends State<PersonalInfoInitPage> {
   }
 }
 
-
 class UserInfoPage extends StatefulWidget {
   @override
   _UserInfoPageState createState() => _UserInfoPageState();
 }
 
 class _UserInfoPageState extends State<UserInfoPage> {
+
+
   TextEditingController _nicknameController = TextEditingController();
   TextEditingController _ageController = TextEditingController();
   String _gender = '';
@@ -48,7 +49,8 @@ class _UserInfoPageState extends State<UserInfoPage> {
     //user클래스로 데이터가 전달되면 이를 json 포맷으로 바꿔줌
     //post로 데이터 전달하고 response를 받아야 한다.
     try {
-      var res = await http.post(Uri.parse(API.userInfoSaveUrl), body:userModel.toJson());
+      var res = await http.post(Uri.parse(API.userInfoSaveUrl), body:userModel.toJson(),  headers: <String,String>{"accessToken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm92aWRlciI6Imdvb2dsZSIsImVtYWlsIjoiZGlub2hqYjIzMzFAZ21haWwuY29tIiwiaWF0IjoxNjgwNjAzOTYyLCJleHAiOjE2ODA2OTAzNjJ9.mR7fR6uhrjtdPBxh_Y7_alLkvmkiMXKc9N4EGpTP-Y0","refreshToken":"585b6aa0-2639-41e1-8568-132dedf04867"});
+
 
       if(res.statusCode == 200) {
         var resUserInfoSave = jsonDecode(res.body);
@@ -56,10 +58,11 @@ class _UserInfoPageState extends State<UserInfoPage> {
           print('사용자 정보 저장 완료 ');
         }
         else {
-          print('에러 발생');
+          print('200 에러 발생');
         }
       }
     }catch(e) {
+      print(res.headers);
       print('에러발생');
     }
   }
@@ -184,9 +187,7 @@ class _UserInfoPageState extends State<UserInfoPage> {
                         print('Nickname: $nickname');
                         print('Age: $age');
                         print('Gender: $gender');
-
-
-
+                        saveUserInfo();
                         Get.to(MbtiTestingPage());
                       }
                       else{
